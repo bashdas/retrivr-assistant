@@ -1,0 +1,78 @@
+[
+  {
+    "id": "Q1",
+    "question": "건국대학교 도서관자치위원회의 8핀 충전기(물품 ID 12) 대여 가능 수량은 얼마인가요?",
+    "expected_keyword": "대여 가능 수량: 3",
+    "expected_doc_ids": [
+      "org-3-item-12"
+    ]
+  },
+  {
+    "id": "Q2",
+    "question": "건국대학교 도서관자치위원회의 구형 노트북 충전기(물품 ID 11) 전체 물품 수량을 알려주세요.",
+    "expected_keyword": "전체 수량: 5",
+    "expected_doc_ids": [
+      "org-3-item-11"
+    ]
+  },
+  {
+    "id": "Q3",
+    "question": "건국대학교 도서관자치위원회의 C타입 충전기(물품 ID 10) 대여하려면 무엇을 담보로 맡기나요?",
+    "expected_keyword": "담보 물품: \"학생증 혹은 신분증\"",
+    "expected_doc_ids": [
+      "org-3-item-10"
+    ]
+  },
+  {
+    "id": "Q4",
+    "question": "건국대학교 도서관자치위원회의 우산(물품 ID 9) 언제까지 빌릴 수 있나요?",
+    "expected_keyword": "대여 기간(rentalDuration 원값): 3",
+    "expected_doc_ids": [
+      "org-3-item-9"
+    ]
+  },
+  {
+    "id": "Q5",
+    "question": "건국대학교 도서관자치위원회의 C타입 충전기 대형(5)는 수집 당시 어떤 상태인가요?",
+    "expected_keyword": "\"label\": \"C타입 충전기 대형(5)\", \"status\": \"RENTED\"",
+    "expected_doc_ids": [
+      "org-3-item-10"
+    ]
+  },
+  {
+    "id": "Q6",
+    "question": "건국대학교 생명과학대학 학생회 시즌의 공학용 계산기(물품 ID 7) 대여할 때 필수로 입력하는 정보가 있나요?",
+    "expected_keyword": "borrowerRequirements: [{\"label\": \"학번\", \"required\": true}, {\"label\": \"학과\", \"required\": true}, {\"label\": \"반납 예정 일시(날짜 및 시간)\", \"required\": false}]",
+    "expected_doc_ids": [
+      "org-2-item-7"
+    ]
+  },
+  {
+    "id": "Q7",
+    "question": "건국대학교 생명과학대학 학생회 시즌의 단우산(물품 ID 6) 활성 여부와 대여 가능 수량을 함께 알려주세요.",
+    "expected_keyword": "활성 여부: true",
+    "expected_doc_ids": [
+      "org-2-item-6"
+    ]
+  },
+  {
+    "id": "Q8",
+    "question": "리트리버 단체의 수집된 물품 목록은 비어 있나요? 조회는 완료됐나요?",
+    "expected_keyword": "수집된 목록: []",
+    "expected_doc_ids": [
+      "org-7-catalog"
+    ]
+  },
+  {
+    "id": "Q9",
+    "question": "제 소속 단체는 어디인가요?",
+    "expected_keyword": null,
+    "expected_doc_ids": []
+  },
+  {
+    "id": "Q10",
+    "question": "내일 오후에 모든 물품의 실시간 대여 가능 수량은 얼마인가요?",
+    "expected_keyword": null,
+    "expected_doc_ids": []
+  }
+]

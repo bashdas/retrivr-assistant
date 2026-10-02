@@ -1,4 +1,19 @@
-"""Snapshot RAG: prepare fixed cases, measure baseline, then compare Hybrid."""
+"""단체 물품 스냅샷을 검색하고 Baseline과 Hybrid를 같은 질문으로 비교한다.
+
+실습 구성:
+- 문서 범위: results/design.md
+- Loader → Splitter: load_snapshot()
+- Embedding → FAISS → Retriever: main()의 baseline/compare 실행
+- 고정 질문: --cases로 지정한 JSON (8~10개)
+- 검색 및 정답 근거 확인: inspect(), hit(), evaluate()
+- 검색 개선: Hybrid (BM25 + 벡터 순위 결합)
+- 생성: answer_with_retriever(), PROMPT / STRICT_PROMPT
+- 생성 개선 재평가: refine_generation.py에서 저장된 검색 문맥을 재사용
+
+API 수집은 collect_api.py로 분리했다. 이 파일의 기본 비교에서는 Prompt를
+고정하고 검색 방식만 바꾼다. STRICT_PROMPT와 수집 실패 처리는 별도의 생성
+실험에서 사용하며, 기본 compare에 자동 적용되는 것은 아니다.
+"""
 import argparse
 import hashlib
 import json
@@ -41,7 +56,7 @@ def load_snapshot(root):
         doc = TextLoader(str(path), encoding='utf-8').load()[0]
         doc.metadata.update(entry)
         docs.append(doc)
-        # Split only the body and restore identity/time/source on EVERY chunk.
+        # 본문만 분할한 뒤 모든 청크에 소속 단체·물품·시각·출처를 복원한다.
         body = doc.page_content.removeprefix(entry['header']).strip()
         for index, text in enumerate(splitter.split_text(body)):
             chunk = doc.model_copy(deep=True)
@@ -60,7 +75,7 @@ def fingerprint(chunks, cases):
 
 def tokenize(text):
     words = re.findall(r'[가-힣a-z0-9]+', text.lower())
-    # Korean particles and concatenated names without a new tokenizer dependency.
+    # 별도 형태소 분석기 없이 조사와 붙여 쓴 이름에 대응하도록 한글 2-gram을 추가한다.
     return words + [w[i:i+2] for w in words if re.search('[가-힣]', w) for i in range(len(w)-1)]
 
 
@@ -103,7 +118,7 @@ STRICT_PROMPT = PROMPT.split('[검색 문서]')[0] + '''
 
 
 def collection_failure_answer(question, retrieved):
-    """Only block a specifically named organization with a failed catalog fetch."""
+    """질문에서 지정한 단체의 목록 수집 실패를 물품 없음으로 해석하지 않는다."""
     for doc in retrieved:
         name = re.search(r'^단체명: (.+)$', doc.page_content, re.MULTILINE)
         if (doc.metadata.get('item_id') is None and name and name[1] in question
@@ -219,7 +234,7 @@ def main():
         parser.error('output exists; choose a new file to preserve results')
     embeddings = OpenAIEmbeddings(model=config['embedding'], max_retries=0)
     vectorstore = FAISS.from_documents(chunks, embeddings)
-    # Reuse identical query embeddings for both arms; one embedding call per question.
+    # 검색 방식 비교에 같은 질문 벡터를 사용한다. 질문당 임베딩은 한 번만 호출한다.
     vectors = {c['question']: embeddings.embed_query(c['question']) for c in cases}
     class CachedRetriever:
         def __init__(self, k): self.k = k

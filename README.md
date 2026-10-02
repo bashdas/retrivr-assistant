@@ -17,7 +17,7 @@ uv sync
 cp .env.example .env
 ```
 
-`.env`에 `OPENAI_API_KEY`를 설정합니다. `RETRIVR_API_TOKEN`은 인증이 필요한 환경에서만 설정합니다. 키를 명령행 인자나 Git에 넣지 마세요. EC2 테스트 서버의 세 조회 API는 무인증 HTTP 200을 확인했습니다. 운영 서버 인증 여부는 최종 검증 때 확인합니다. 추적 기본값은 비활성입니다.
+`.env`에 `OPENAI_API_KEY`를 설정합니다. `RETRIVR_API_TOKEN`은 인증이 필요한 환경에서만 설정합니다. 키를 명령행 인자나 Git에 넣지 마세요. EC2 테스트 서버의 세 조회 API는 무인증 HTTP 200을 확인했습니다. 운영 서버의 같은 세 조회 API도 최종 검증에서 무인증 성공을 확인했습니다. 추적 기본값은 비활성입니다.
 
 ## 수집
 
@@ -56,7 +56,7 @@ uv run python src/capstone_compare.py --snapshot data/snapshots/first --mode com
 uv run python -m unittest discover -s tests -v
 ```
 
-테스트 데이터는 `fixture.invalid`를 사용하는 가상 데이터이며 서비스 성능 평가용이 아닙니다. mock 데이터로 Baseline·Hybrid·생성 개선 비교를 완료했습니다. 운영 성능은 아직 미측정입니다. 상세 설계는 [results/design.md](results/design.md), 평가 상태는 [results/evaluation.md](results/evaluation.md)를 참고하세요.
+테스트 데이터는 `fixture.invalid`를 사용하는 가상 데이터이며 서비스 성능 평가용이 아닙니다. mock 데이터로 Baseline·Hybrid·생성 개선 비교를 완료했습니다. 운영 키워드 범위에서 수집·검색·생성 최종 검증도 완료했으며 전체 운영 성능으로 일반화하지 않습니다. 상세 설계는 [results/design.md](results/design.md), 평가 상태는 [results/evaluation.md](results/evaluation.md)를 참고하세요.
 
 전체 수량에서 대여 가능 수량을 뺀 값을 모두 대여 중으로 안내하지 않습니다. 일부 검색 문서만으로 전체 목록이나 이용 자격을 확정하지 않습니다. 후속 개선은 실제 Baseline 오류에 따라 결정합니다.
 
@@ -65,7 +65,7 @@ uv run python -m unittest discover -s tests -v
 
 ## 권장 실험: mock 데이터
 
-현재 주 실험은 `data/mock/experiment-v1`과 `results/mock-questions.json`입니다. 모든 단체/물품/출처는 가상입니다. 의도적으로 목록/상세 조회 오류를 각각 한 건 넣었습니다. 운영 서버는 `https://www.retrivr.kr/`을 최종 검증 대상으로 두고 현재는 호출하지 않습니다.
+현재 주 실험은 `data/mock/experiment-v1`과 `results/mock-questions.json`입니다. 모든 단체/물품/출처는 가상입니다. 의도적으로 목록/상세 조회 오류를 각각 한 건 넣었습니다. 운영 서버 `https://www.retrivr.kr/`에서는 별도 스냅샷으로 최종 검증을 완료했습니다.
 
 ```bash
 # 이미 제공된 v1은 그대로 사용. 새 데이터가 필요하면 새 경로로 생성
@@ -81,10 +81,17 @@ refine_generation은 동일 검색 근거에 개선한 Prompt와 수집 실패 �
 
 실험 결과: Baseline/Hybrid Hit@3 모두 7/7, 다른 단체 청크 11/21 → 3/21. 주요 답변 근거 일치는 최종 처리 기준 9/10 → 10/10이며 Codex의 문서 대조 판정입니다. 작은 가상 데이터 결과이며 운영 품질 보장이 아닙니다. 중간 개선안의 회귀와 최종 답변 재사용 방식까지 [평가 기록](results/evaluation.md)에 공개했습니다.
 
-운영 최종 검증 시 아래 형식으로 **대상 주소를 명시**하고 별도 스냅샷/질문 파일을 만듭니다. 아직 실행하지 않은 예시입니다.
+운영 최종 검증 시 아래 형식으로 **대상 주소를 명시**하고 별도 스냅샷/질문 파일을 만듭니다. 아래는 새 스냅샷을 만드는 실행 형식입니다. 기존 검증 결과는 `results/production-review.json`에 있습니다.
 
 ```bash
 uv run python src/collect_api.py --base-url https://www.retrivr.kr --keyword '실제 대상 키워드' --output data/snapshots/production-first --max-requests 20
 ```
 
-운영 주소의 API 경로와 인증은 최종 단계에서 먼저 확인해야 합니다. mock 데이터와 운영 데이터를 하나의 FAISS에 혼합하지 않습니다.
+운영에서 사용한 세 조회 API 경로와 무인증 접근은 확인했습니다. mock 데이터와 운영 데이터를 하나의 FAISS에 혼합하지 않습니다.
+
+
+## 실습 보고서 및 제출
+
+[종합실습 보고서](results/report.md)에 기획, 기술스택, 코드 구조, mock 개선 과정과 운영 최종 실행 결과를 정리했습니다. 운영은 단체 4곳·물품 11종, 문서 15개·청크 17개이며 정답 검색 8/8, 답 없는 질문 제한은 개선 전 1/2에서 개선 후 2/2였습니다. 개선 답변 1건의 출처·시각 누락도 기록했습니다.
+
+안내된 평가 기준에 따라 **`data/`는 제출하지 않아도 됩니다.** [design.md](results/design.md)에 출처·범위·사용 필드·mock 생성 규칙·운영 사용 내역·재현 한계를 남겼습니다. 구현 코드, 설계/보고서/평가 문서, 질문·리뷰 JSON을 함께 제출하고 실제 `.env`와 토큰은 제외하세요. 로컬 데이터는 그대로 보존했습니다.
