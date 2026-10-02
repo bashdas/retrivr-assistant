@@ -17,7 +17,7 @@ uv sync
 cp .env.example .env
 ```
 
-`.env`에 `OPENAI_API_KEY`를 설정합니다. `RETRIVR_API_TOKEN`은 인증이 필요한 환경에서만 설정합니다. 키를 명령행 인자나 Git에 넣지 마세요. 현재 확인한 세 조회 API는 무인증으로 HTTP 200을 반환했습니다. 추적 기본값은 비활성입니다.
+`.env`에 `OPENAI_API_KEY`를 설정합니다. `RETRIVR_API_TOKEN`은 인증이 필요한 환경에서만 설정합니다. 키를 명령행 인자나 Git에 넣지 마세요. EC2 테스트 서버의 세 조회 API는 무인증 HTTP 200을 확인했습니다. 운영 서버 인증 여부는 최종 검증 때 확인합니다. 추적 기본값은 비활성입니다.
 
 ## 수집
 
@@ -56,8 +56,35 @@ uv run python src/capstone_compare.py --snapshot data/snapshots/first --mode com
 uv run python -m unittest discover -s tests -v
 ```
 
-테스트 데이터는 `fixture.invalid`를 사용하는 가상 데이터이며 서비스 성능 평가용이 아닙니다. 실제 키워드와 OpenAI 키가 아직 없어 Baseline·Generation·Hybrid 성능 수치는 미측정입니다. 상세 설계는 [results/design.md](results/design.md), 평가 상태는 [results/evaluation.md](results/evaluation.md)를 참고하세요.
+테스트 데이터는 `fixture.invalid`를 사용하는 가상 데이터이며 서비스 성능 평가용이 아닙니다. mock 데이터로 Baseline·Hybrid·생성 개선 비교를 완료했습니다. 운영 성능은 아직 미측정입니다. 상세 설계는 [results/design.md](results/design.md), 평가 상태는 [results/evaluation.md](results/evaluation.md)를 참고하세요.
 
 전체 수량에서 대여 가능 수량을 뺀 값을 모두 대여 중으로 안내하지 않습니다. 일부 검색 문서만으로 전체 목록이나 이용 자격을 확정하지 않습니다. 후속 개선은 실제 Baseline 오류에 따라 결정합니다.
 
 강의 스켈레톤 출처: https://github.com/comstudynews/rag-pipeline-lab2026 의 final_capstone/practice. 원본 강의 디렉토리는 수정하지 않았습니다.
+
+
+## 권장 실험: mock 데이터
+
+현재 주 실험은 `data/mock/experiment-v1`과 `results/mock-questions.json`입니다. 모든 단체/물품/출처는 가상입니다. 의도적으로 목록/상세 조회 오류를 각각 한 건 넣었습니다. 운영 서버는 `https://www.retrivr.kr/`을 최종 검증 대상으로 두고 현재는 호출하지 않습니다.
+
+```bash
+# 이미 제공된 v1은 그대로 사용. 새 데이터가 필요하면 새 경로로 생성
+uv run python src/create_mock_data.py --output data/mock/experiment-v2 --cases results/mock-questions-v2.json
+uv run python src/capstone_compare.py --snapshot data/mock/experiment-v1 --cases results/mock-questions.json --mode plan --generate
+# 아래 실행은 유료 호출. 기존 결과를 덮어쓰지 않도록 새 output 경로 지정
+uv run python src/capstone_compare.py --snapshot data/mock/experiment-v1 --cases results/mock-questions.json --mode baseline --generate --output results/run-mock-new-baseline.json
+uv run python src/capstone_compare.py --snapshot data/mock/experiment-v1 --cases results/mock-questions.json --mode compare --generate --baseline results/run-mock-new-baseline.json --reason '관찰한 검색 문제' --output results/run-mock-new-compare.json
+uv run python src/refine_generation.py --baseline results/run-mock-new-baseline.json --output results/run-mock-new-refined.json
+```
+
+refine_generation은 동일 검색 근거에 개선한 Prompt와 수집 실패 처리를 적용합니다. `--guard-only`는 저장된 답변에 실패 처리만 적용하여 유료 호출하지 않습니다. `.env`는 프로젝트 루트에서 읽고 기존 셸 환경변수보다 우선합니다.
+
+실험 결과: Baseline/Hybrid Hit@3 모두 7/7, 다른 단체 청크 11/21 → 3/21. 주요 답변 근거 일치는 최종 처리 기준 9/10 → 10/10이며 Codex의 문서 대조 판정입니다. 작은 가상 데이터 결과이며 운영 품질 보장이 아닙니다. 중간 개선안의 회귀와 최종 답변 재사용 방식까지 [평가 기록](results/evaluation.md)에 공개했습니다.
+
+운영 최종 검증 시 아래 형식으로 **대상 주소를 명시**하고 별도 스냅샷/질문 파일을 만듭니다. 아직 실행하지 않은 예시입니다.
+
+```bash
+uv run python src/collect_api.py --base-url https://www.retrivr.kr --keyword '실제 대상 키워드' --output data/snapshots/production-first --max-requests 20
+```
+
+운영 주소의 API 경로와 인증은 최종 단계에서 먼저 확인해야 합니다. mock 데이터와 운영 데이터를 하나의 FAISS에 혼합하지 않습니다.

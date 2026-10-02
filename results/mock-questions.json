@@ -1,0 +1,76 @@
+[
+  {
+    "id": "Q1",
+    "question": "가상누리대학교 컴퓨터공학과 노트북 거치대는 몇 개 빌릴 수 있나요?",
+    "expected_keyword": "대여 가능 수량: 4",
+    "expected_doc_ids": [
+      "org-101-item-10101"
+    ]
+  },
+  {
+    "id": "Q2",
+    "question": "가상누리대학교 총학생회 노트북 거치대는 몇 개 빌릴 수 있나요?",
+    "expected_keyword": "대여 가능 수량: 2",
+    "expected_doc_ids": [
+      "org-102-item-10201"
+    ]
+  },
+  {
+    "id": "Q3",
+    "question": "가상누리대학교 컴퓨터공학과의 RX-7을 빌릴 때 맡기는 것은?",
+    "expected_keyword": "담보 물품: \"학생증과 보증금 10000원\"",
+    "expected_doc_ids": [
+      "org-101-item-10103"
+    ]
+  },
+  {
+    "id": "Q4",
+    "question": "가상한빛대학교 사진동아리에서 야간 촬영할 때 카메라가 흔들리지 않게 받쳐주는 장비는?",
+    "expected_keyword": "야간 장노출 사진 촬영",
+    "expected_doc_ids": [
+      "org-103-item-10305"
+    ]
+  },
+  {
+    "id": "Q5",
+    "question": "가상누리대학교 컴퓨터공학과 축구공의 분실·고장·승인 대기 상태를 알려주세요.",
+    "expected_keyword": "\"status\": \"BROKEN\"",
+    "expected_doc_ids": [
+      "org-101-item-10102"
+    ]
+  },
+  {
+    "id": "Q6",
+    "question": "가상누리대학교 총학생회 PB-20000은 활성 상태인가요?",
+    "expected_keyword": "활성 여부: false",
+    "expected_doc_ids": [
+      "org-102-item-10204"
+    ]
+  },
+  {
+    "id": "Q7",
+    "question": "가상누리대학교 컴퓨터공학과의 RX-7은 얼마나 오래 빌리나요?",
+    "expected_keyword": "대여 기간(rentalDuration 원값): 6",
+    "expected_doc_ids": [
+      "org-101-item-10103"
+    ]
+  },
+  {
+    "id": "Q8",
+    "question": "가상한빛대학교 체육학과 우산 대여 시 필수 입력 정보를 알려주세요.",
+    "expected_keyword": null,
+    "expected_doc_ids": []
+  },
+  {
+    "id": "Q9",
+    "question": "가상누리대학교 수집실패동아리는 물품이 하나도 없는 거죠?",
+    "expected_keyword": null,
+    "expected_doc_ids": []
+  },
+  {
+    "id": "Q10",
+    "question": "제 소속 단체를 확인하고 내일 실시간 대여 가능한 전체 물품 수를 알려주세요.",
+    "expected_keyword": null,
+    "expected_doc_ids": []
+  }
+]

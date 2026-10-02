@@ -80,7 +80,8 @@ def display(value):
 def collect(client, keywords, output):
     output.mkdir(parents=True, exist_ok=False)
     (output / 'documents').mkdir()
-    manifest = dict(started_at=now(), keywords=keywords, data_kind='real_api',
+    data_kind = getattr(client, 'data_kind', 'real_api')
+    manifest = dict(started_at=now(), keywords=keywords, data_kind=data_kind,
                     base_url=client.base, errors=[], documents=[], organizations=[])
     organizations = {}
     for keyword in keywords:
@@ -131,6 +132,8 @@ def collect(client, keywords, output):
             collected_at = item_times[iid] if item else now()
             sources = [client.base + path]
             header = f'단체명: {org["name"]}\n단체 ID: {oid}\n수집 시각(UTC): {collected_at}\n'
+            if data_kind == 'mock':
+                header = '가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n' + header
             header += f'수집 키워드 범위: {", ".join(keywords)}\n실시간 상태가 아닌 수집 스냅샷입니다.\n'
             body = f'물품 목록 수집 완료: {complete}\n수집된 물품 수: {len(items)}\n'
             if item:
@@ -158,16 +161,17 @@ def collect(client, keywords, output):
 
 
 def main():
-    load_dotenv()
+    load_dotenv(Path(__file__).resolve().parents[1] / '.env', override=True)
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--keyword', action='append', required=True)
     parser.add_argument('--output', type=Path, required=True, help='New snapshot directory; never overwrites')
     parser.add_argument('--max-requests', type=int, default=100)
+    parser.add_argument('--base-url', help='Explicit target; overrides .env for final production verification')
     args = parser.parse_args()
     keywords = list(dict.fromkeys(k.strip() for k in args.keyword if k.strip()))
     if not keywords or args.max_requests < 1:
         parser.error('nonempty keywords and positive request budget required')
-    client = Client(os.getenv('RETRIVR_BASE_URL', DEFAULT_BASE), os.getenv('RETRIVR_API_TOKEN', ''), args.max_requests)
+    client = Client(args.base_url or os.getenv('RETRIVR_BASE_URL', DEFAULT_BASE), os.getenv('RETRIVR_API_TOKEN', ''), args.max_requests)
     manifest = collect(client, keywords, args.output)
     print(json.dumps({k: manifest[k] for k in ('request_count', 'complete')}, ensure_ascii=False))
     print(f'documents={len(manifest["documents"])} errors={len(manifest["errors"])}')

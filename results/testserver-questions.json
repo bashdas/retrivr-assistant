@@ -1,0 +1,78 @@
+[
+  {
+    "id": "Q1",
+    "question": "리트리버의 프리미엄일 때(물품 ID 4) 대여 가능 수량은 얼마인가요?",
+    "expected_keyword": "대여 가능 수량: 5",
+    "expected_doc_ids": [
+      "org-1-item-4"
+    ]
+  },
+  {
+    "id": "Q2",
+    "question": "리트리버의 축구공(물품 ID 3) 전체 물품 수량을 알려주세요.",
+    "expected_keyword": "전체 수량: 5",
+    "expected_doc_ids": [
+      "org-1-item-3"
+    ]
+  },
+  {
+    "id": "Q3",
+    "question": "리트리버에서 노트북을 올려두는 거치대를 빌릴 때 맡겨야 하는 것은 무엇인가요?",
+    "expected_keyword": "담보 물품: \"학생증\"",
+    "expected_doc_ids": [
+      "org-1-item-1"
+    ]
+  },
+  {
+    "id": "Q4",
+    "question": "리트리버의 프리미엄일 때 물품은 얼마나 오래 빌릴 수 있나요?",
+    "expected_keyword": "대여 기간(rentalDuration 원값): 3",
+    "expected_doc_ids": [
+      "org-1-item-4"
+    ]
+  },
+  {
+    "id": "Q5",
+    "question": "리트리버의 축구공(물품 ID 3) 개별 물품 상태를 알려주세요.",
+    "expected_keyword": "itemUnits: [{\"itemUnitId\": 2, \"label\": \"축구공 (2)\", \"status\": \"AVAILABLE\"}, {\"itemUnitId\": 3, \"label\": \"축구공 (3)\", \"status\": \"AVAILABLE\"}, {\"itemUnitId\": 4, \"label\": \"축구공 (14)\", \"status\": \"AVAILABLE\"}, {\"itemUnitId\": 5, \"label\": \"축구공 (25)\", \"status\": \"AVAILABLE\"}, {\"itemUnitId\": 1, \"label\": \"축구공 (4)\", \"status\": \"AVAILABLE\"}]",
+    "expected_doc_ids": [
+      "org-1-item-3"
+    ]
+  },
+  {
+    "id": "Q6",
+    "question": "리트리버 축구공을 빌리려면 어떤 정보를 필수로 입력하나요?",
+    "expected_keyword": "borrowerRequirements: [{\"label\": \"학과\", \"required\": true}]",
+    "expected_doc_ids": [
+      "org-1-item-3"
+    ]
+  },
+  {
+    "id": "Q7",
+    "question": "리트리버 노트북 거치대는 전체 몇 개이고 몇 개를 빌릴 수 있나요? 나머지는 모두 대여 중인가요?",
+    "expected_keyword": "대여 가능 수량: 4",
+    "expected_doc_ids": [
+      "org-1-item-1"
+    ]
+  },
+  {
+    "id": "Q8",
+    "question": "리트리버의 축구공(물품 ID 3) 어떤 방식으로 관리하는 물품인가요?",
+    "expected_keyword": "itemManagementType: \"UNIT\"",
+    "expected_doc_ids": [
+      "org-1-item-3"
+    ]
+  },
+  {
+    "id": "Q9",
+    "question": "제 소속 단체는 어디인가요?",
+    "expected_keyword": null,
+    "expected_doc_ids": []
+  },
+  {
+    "id": "Q10",
+    "question": "내일 오후에 모든 물품의 실시간 대여 가능 수량은 얼마인가요?",
+    "expected_keyword": null,
+    "expected_doc_ids": []
+  }
+]

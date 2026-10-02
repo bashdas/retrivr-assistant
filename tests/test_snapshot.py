@@ -71,4 +71,35 @@ class SnapshotTests(unittest.TestCase):
             self.assertIn('물품 없음으로 해석할 수 없습니다', text)
 
 
+
+class MockDatasetTests(unittest.TestCase):
+    def test_mock_is_labelled_and_intentional_failures_are_preserved(self):
+        from create_mock_data import MockClient, cases
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / 'snapshot'
+            manifest = collect(MockClient(), ['가상누리대학교', '가상한빛대학교'], root)
+            self.assertEqual(manifest['data_kind'], 'mock')
+            self.assertEqual(len(manifest['documents']), 29)
+            self.assertEqual({e['stage'] for e in manifest['errors']}, {'items', 'detail'})
+            _, docs, chunks = load_snapshot(root)
+            self.assertTrue(all('가상 MOCK' in d.page_content for d in chunks))
+            for case in cases():
+                if case['expected_keyword'] is not None:
+                    self.assertEqual(hit(chunks, case['expected_keyword'], case['expected_doc_ids']), 1)
+            self.assertEqual(sum(c['expected_keyword'] is None for c in cases()), 3)
+
+class CollectionGuardTests(unittest.TestCase):
+    def test_failed_target_is_blocked_but_unrelated_failure_does_not_block(self):
+        from capstone_compare import collection_failure_answer
+        from create_mock_data import MockClient
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / 'snapshot'
+            collect(MockClient(), ['가상'], root)
+            _, docs, _ = load_snapshot(root)
+            answer = collection_failure_answer('가상누리대학교 수집실패동아리는 물품이 없죠?', docs)
+            self.assertIn('확인할 수 없습니다', answer)
+            self.assertIn('실제 물품이 없다는 뜻은 아닙니다', answer)
+            self.assertIsNone(collection_failure_answer('가상누리대학교 총학생회 우산 수량은?', docs))
+
+
 if __name__ == '__main__': unittest.main()

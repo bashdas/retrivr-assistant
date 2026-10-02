@@ -1,0 +1,401 @@
+{
+  "started_at": "2026-10-02T01:33:04.122648+00:00",
+  "keywords": [
+    "가상누리대학교",
+    "가상한빛대학교"
+  ],
+  "data_kind": "mock",
+  "base_url": "https://mock.retrivr.invalid",
+  "errors": [
+    {
+      "stage": "detail",
+      "item_id": 10406,
+      "error": "http_503"
+    },
+    {
+      "stage": "items",
+      "organization_id": 105,
+      "error": "http_503"
+    }
+  ],
+  "documents": [
+    {
+      "doc_id": "org-101-catalog",
+      "file": "documents/org-101-catalog.txt",
+      "organization_id": 101,
+      "item_id": null,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상누리대학교 컴퓨터공학과\n단체 ID: 101\n수집 시각(UTC): 2026-10-02T01:33:04.122796+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/101/items\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/101/items"
+      ],
+      "collected_at": "2026-10-02T01:33:04.122796+00:00"
+    },
+    {
+      "doc_id": "org-101-item-10101",
+      "file": "documents/org-101-item-10101.txt",
+      "organization_id": 101,
+      "item_id": 10101,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상누리대학교 컴퓨터공학과\n단체 ID: 101\n수집 시각(UTC): 2026-10-02T01:33:04.122777+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 노트북 거치대\n물품 ID: 10101\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/101/items | https://mock.retrivr.invalid/api/public/v1/items/10101\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/101/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10101"
+      ],
+      "collected_at": "2026-10-02T01:33:04.122777+00:00"
+    },
+    {
+      "doc_id": "org-101-item-10102",
+      "file": "documents/org-101-item-10102.txt",
+      "organization_id": 101,
+      "item_id": 10102,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상누리대학교 컴퓨터공학과\n단체 ID: 101\n수집 시각(UTC): 2026-10-02T01:33:04.122779+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 축구공\n물품 ID: 10102\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/101/items | https://mock.retrivr.invalid/api/public/v1/items/10102\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/101/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10102"
+      ],
+      "collected_at": "2026-10-02T01:33:04.122779+00:00"
+    },
+    {
+      "doc_id": "org-101-item-10103",
+      "file": "documents/org-101-item-10103.txt",
+      "organization_id": 101,
+      "item_id": 10103,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상누리대학교 컴퓨터공학과\n단체 ID: 101\n수집 시각(UTC): 2026-10-02T01:33:04.122779+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 무선 마이크 RX-7\n물품 ID: 10103\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/101/items | https://mock.retrivr.invalid/api/public/v1/items/10103\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/101/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10103"
+      ],
+      "collected_at": "2026-10-02T01:33:04.122779+00:00"
+    },
+    {
+      "doc_id": "org-101-item-10104",
+      "file": "documents/org-101-item-10104.txt",
+      "organization_id": 101,
+      "item_id": 10104,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상누리대학교 컴퓨터공학과\n단체 ID: 101\n수집 시각(UTC): 2026-10-02T01:33:04.122782+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 보조배터리 PB-20000\n물품 ID: 10104\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/101/items | https://mock.retrivr.invalid/api/public/v1/items/10104\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/101/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10104"
+      ],
+      "collected_at": "2026-10-02T01:33:04.122782+00:00"
+    },
+    {
+      "doc_id": "org-101-item-10105",
+      "file": "documents/org-101-item-10105.txt",
+      "organization_id": 101,
+      "item_id": 10105,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상누리대학교 컴퓨터공학과\n단체 ID: 101\n수집 시각(UTC): 2026-10-02T01:33:04.122782+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 카메라 삼각대\n물품 ID: 10105\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/101/items | https://mock.retrivr.invalid/api/public/v1/items/10105\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/101/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10105"
+      ],
+      "collected_at": "2026-10-02T01:33:04.122782+00:00"
+    },
+    {
+      "doc_id": "org-101-item-10106",
+      "file": "documents/org-101-item-10106.txt",
+      "organization_id": 101,
+      "item_id": 10106,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상누리대학교 컴퓨터공학과\n단체 ID: 101\n수집 시각(UTC): 2026-10-02T01:33:04.122783+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 우산\n물품 ID: 10106\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/101/items | https://mock.retrivr.invalid/api/public/v1/items/10106\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/101/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10106"
+      ],
+      "collected_at": "2026-10-02T01:33:04.122783+00:00"
+    },
+    {
+      "doc_id": "org-102-catalog",
+      "file": "documents/org-102-catalog.txt",
+      "organization_id": 102,
+      "item_id": null,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상누리대학교 총학생회\n단체 ID: 102\n수집 시각(UTC): 2026-10-02T01:33:04.123314+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/102/items\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/102/items"
+      ],
+      "collected_at": "2026-10-02T01:33:04.123314+00:00"
+    },
+    {
+      "doc_id": "org-102-item-10201",
+      "file": "documents/org-102-item-10201.txt",
+      "organization_id": 102,
+      "item_id": 10201,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상누리대학교 총학생회\n단체 ID: 102\n수집 시각(UTC): 2026-10-02T01:33:04.123299+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 노트북 거치대\n물품 ID: 10201\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/102/items | https://mock.retrivr.invalid/api/public/v1/items/10201\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/102/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10201"
+      ],
+      "collected_at": "2026-10-02T01:33:04.123299+00:00"
+    },
+    {
+      "doc_id": "org-102-item-10202",
+      "file": "documents/org-102-item-10202.txt",
+      "organization_id": 102,
+      "item_id": 10202,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상누리대학교 총학생회\n단체 ID: 102\n수집 시각(UTC): 2026-10-02T01:33:04.123301+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 축구공\n물품 ID: 10202\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/102/items | https://mock.retrivr.invalid/api/public/v1/items/10202\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/102/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10202"
+      ],
+      "collected_at": "2026-10-02T01:33:04.123301+00:00"
+    },
+    {
+      "doc_id": "org-102-item-10203",
+      "file": "documents/org-102-item-10203.txt",
+      "organization_id": 102,
+      "item_id": 10203,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상누리대학교 총학생회\n단체 ID: 102\n수집 시각(UTC): 2026-10-02T01:33:04.123302+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 무선 마이크 RX-7\n물품 ID: 10203\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/102/items | https://mock.retrivr.invalid/api/public/v1/items/10203\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/102/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10203"
+      ],
+      "collected_at": "2026-10-02T01:33:04.123302+00:00"
+    },
+    {
+      "doc_id": "org-102-item-10204",
+      "file": "documents/org-102-item-10204.txt",
+      "organization_id": 102,
+      "item_id": 10204,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상누리대학교 총학생회\n단체 ID: 102\n수집 시각(UTC): 2026-10-02T01:33:04.123304+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 보조배터리 PB-20000\n물품 ID: 10204\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/102/items | https://mock.retrivr.invalid/api/public/v1/items/10204\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/102/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10204"
+      ],
+      "collected_at": "2026-10-02T01:33:04.123304+00:00"
+    },
+    {
+      "doc_id": "org-102-item-10205",
+      "file": "documents/org-102-item-10205.txt",
+      "organization_id": 102,
+      "item_id": 10205,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상누리대학교 총학생회\n단체 ID: 102\n수집 시각(UTC): 2026-10-02T01:33:04.123304+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 카메라 삼각대\n물품 ID: 10205\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/102/items | https://mock.retrivr.invalid/api/public/v1/items/10205\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/102/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10205"
+      ],
+      "collected_at": "2026-10-02T01:33:04.123304+00:00"
+    },
+    {
+      "doc_id": "org-102-item-10206",
+      "file": "documents/org-102-item-10206.txt",
+      "organization_id": 102,
+      "item_id": 10206,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상누리대학교 총학생회\n단체 ID: 102\n수집 시각(UTC): 2026-10-02T01:33:04.123305+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 우산\n물품 ID: 10206\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/102/items | https://mock.retrivr.invalid/api/public/v1/items/10206\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/102/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10206"
+      ],
+      "collected_at": "2026-10-02T01:33:04.123305+00:00"
+    },
+    {
+      "doc_id": "org-103-catalog",
+      "file": "documents/org-103-catalog.txt",
+      "organization_id": 103,
+      "item_id": null,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상한빛대학교 사진동아리\n단체 ID: 103\n수집 시각(UTC): 2026-10-02T01:33:04.123733+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/103/items\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/103/items"
+      ],
+      "collected_at": "2026-10-02T01:33:04.123733+00:00"
+    },
+    {
+      "doc_id": "org-103-item-10301",
+      "file": "documents/org-103-item-10301.txt",
+      "organization_id": 103,
+      "item_id": 10301,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상한빛대학교 사진동아리\n단체 ID: 103\n수집 시각(UTC): 2026-10-02T01:33:04.123717+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 노트북 거치대\n물품 ID: 10301\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/103/items | https://mock.retrivr.invalid/api/public/v1/items/10301\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/103/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10301"
+      ],
+      "collected_at": "2026-10-02T01:33:04.123717+00:00"
+    },
+    {
+      "doc_id": "org-103-item-10302",
+      "file": "documents/org-103-item-10302.txt",
+      "organization_id": 103,
+      "item_id": 10302,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상한빛대학교 사진동아리\n단체 ID: 103\n수집 시각(UTC): 2026-10-02T01:33:04.123719+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 축구공\n물품 ID: 10302\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/103/items | https://mock.retrivr.invalid/api/public/v1/items/10302\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/103/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10302"
+      ],
+      "collected_at": "2026-10-02T01:33:04.123719+00:00"
+    },
+    {
+      "doc_id": "org-103-item-10303",
+      "file": "documents/org-103-item-10303.txt",
+      "organization_id": 103,
+      "item_id": 10303,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상한빛대학교 사진동아리\n단체 ID: 103\n수집 시각(UTC): 2026-10-02T01:33:04.123720+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 무선 마이크 RX-7\n물품 ID: 10303\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/103/items | https://mock.retrivr.invalid/api/public/v1/items/10303\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/103/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10303"
+      ],
+      "collected_at": "2026-10-02T01:33:04.123720+00:00"
+    },
+    {
+      "doc_id": "org-103-item-10304",
+      "file": "documents/org-103-item-10304.txt",
+      "organization_id": 103,
+      "item_id": 10304,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상한빛대학교 사진동아리\n단체 ID: 103\n수집 시각(UTC): 2026-10-02T01:33:04.123721+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 보조배터리 PB-20000\n물품 ID: 10304\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/103/items | https://mock.retrivr.invalid/api/public/v1/items/10304\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/103/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10304"
+      ],
+      "collected_at": "2026-10-02T01:33:04.123721+00:00"
+    },
+    {
+      "doc_id": "org-103-item-10305",
+      "file": "documents/org-103-item-10305.txt",
+      "organization_id": 103,
+      "item_id": 10305,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상한빛대학교 사진동아리\n단체 ID: 103\n수집 시각(UTC): 2026-10-02T01:33:04.123722+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 카메라 삼각대\n물품 ID: 10305\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/103/items | https://mock.retrivr.invalid/api/public/v1/items/10305\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/103/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10305"
+      ],
+      "collected_at": "2026-10-02T01:33:04.123722+00:00"
+    },
+    {
+      "doc_id": "org-103-item-10306",
+      "file": "documents/org-103-item-10306.txt",
+      "organization_id": 103,
+      "item_id": 10306,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상한빛대학교 사진동아리\n단체 ID: 103\n수집 시각(UTC): 2026-10-02T01:33:04.123723+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 우산\n물품 ID: 10306\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/103/items | https://mock.retrivr.invalid/api/public/v1/items/10306\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/103/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10306"
+      ],
+      "collected_at": "2026-10-02T01:33:04.123723+00:00"
+    },
+    {
+      "doc_id": "org-104-catalog",
+      "file": "documents/org-104-catalog.txt",
+      "organization_id": 104,
+      "item_id": null,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상한빛대학교 체육학과\n단체 ID: 104\n수집 시각(UTC): 2026-10-02T01:33:04.124151+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/104/items\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/104/items"
+      ],
+      "collected_at": "2026-10-02T01:33:04.124151+00:00"
+    },
+    {
+      "doc_id": "org-104-item-10401",
+      "file": "documents/org-104-item-10401.txt",
+      "organization_id": 104,
+      "item_id": 10401,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상한빛대학교 체육학과\n단체 ID: 104\n수집 시각(UTC): 2026-10-02T01:33:04.124136+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 노트북 거치대\n물품 ID: 10401\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/104/items | https://mock.retrivr.invalid/api/public/v1/items/10401\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/104/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10401"
+      ],
+      "collected_at": "2026-10-02T01:33:04.124136+00:00"
+    },
+    {
+      "doc_id": "org-104-item-10402",
+      "file": "documents/org-104-item-10402.txt",
+      "organization_id": 104,
+      "item_id": 10402,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상한빛대학교 체육학과\n단체 ID: 104\n수집 시각(UTC): 2026-10-02T01:33:04.124137+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 축구공\n물품 ID: 10402\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/104/items | https://mock.retrivr.invalid/api/public/v1/items/10402\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/104/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10402"
+      ],
+      "collected_at": "2026-10-02T01:33:04.124137+00:00"
+    },
+    {
+      "doc_id": "org-104-item-10403",
+      "file": "documents/org-104-item-10403.txt",
+      "organization_id": 104,
+      "item_id": 10403,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상한빛대학교 체육학과\n단체 ID: 104\n수집 시각(UTC): 2026-10-02T01:33:04.124138+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 무선 마이크 RX-7\n물품 ID: 10403\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/104/items | https://mock.retrivr.invalid/api/public/v1/items/10403\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/104/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10403"
+      ],
+      "collected_at": "2026-10-02T01:33:04.124138+00:00"
+    },
+    {
+      "doc_id": "org-104-item-10404",
+      "file": "documents/org-104-item-10404.txt",
+      "organization_id": 104,
+      "item_id": 10404,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상한빛대학교 체육학과\n단체 ID: 104\n수집 시각(UTC): 2026-10-02T01:33:04.124140+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 보조배터리 PB-20000\n물품 ID: 10404\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/104/items | https://mock.retrivr.invalid/api/public/v1/items/10404\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/104/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10404"
+      ],
+      "collected_at": "2026-10-02T01:33:04.124140+00:00"
+    },
+    {
+      "doc_id": "org-104-item-10405",
+      "file": "documents/org-104-item-10405.txt",
+      "organization_id": 104,
+      "item_id": 10405,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상한빛대학교 체육학과\n단체 ID: 104\n수집 시각(UTC): 2026-10-02T01:33:04.124141+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 카메라 삼각대\n물품 ID: 10405\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/104/items | https://mock.retrivr.invalid/api/public/v1/items/10405\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/104/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10405"
+      ],
+      "collected_at": "2026-10-02T01:33:04.124141+00:00"
+    },
+    {
+      "doc_id": "org-104-item-10406",
+      "file": "documents/org-104-item-10406.txt",
+      "organization_id": 104,
+      "item_id": 10406,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상한빛대학교 체육학과\n단체 ID: 104\n수집 시각(UTC): 2026-10-02T01:33:04.124141+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n물품명: 우산\n물품 ID: 10406\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/104/items | https://mock.retrivr.invalid/api/public/v1/items/10406\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/104/items",
+        "https://mock.retrivr.invalid/api/public/v1/items/10406"
+      ],
+      "collected_at": "2026-10-02T01:33:04.124141+00:00"
+    },
+    {
+      "doc_id": "org-105-catalog",
+      "file": "documents/org-105-catalog.txt",
+      "organization_id": 105,
+      "item_id": null,
+      "header": "가상 MOCK 실험 데이터: 실제 단체·물품·수량이 아닙니다.\n단체명: 가상누리대학교 수집실패동아리\n단체 ID: 105\n수집 시각(UTC): 2026-10-02T01:33:04.124542+00:00\n수집 키워드 범위: 가상누리대학교, 가상한빛대학교\n실시간 상태가 아닌 수집 스냅샷입니다.\n출처: https://mock.retrivr.invalid/api/public/v1/organizations/105/items\n",
+      "sources": [
+        "https://mock.retrivr.invalid/api/public/v1/organizations/105/items"
+      ],
+      "collected_at": "2026-10-02T01:33:04.124542+00:00"
+    }
+  ],
+  "organizations": [
+    {
+      "organizationId": 101,
+      "name": "가상누리대학교 컴퓨터공학과",
+      "list_complete": true,
+      "collected_item_count": 6
+    },
+    {
+      "organizationId": 102,
+      "name": "가상누리대학교 총학생회",
+      "list_complete": true,
+      "collected_item_count": 6
+    },
+    {
+      "organizationId": 103,
+      "name": "가상한빛대학교 사진동아리",
+      "list_complete": true,
+      "collected_item_count": 6
+    },
+    {
+      "organizationId": 104,
+      "name": "가상한빛대학교 체육학과",
+      "list_complete": true,
+      "collected_item_count": 6
+    },
+    {
+      "organizationId": 105,
+      "name": "가상누리대학교 수집실패동아리",
+      "list_complete": false,
+      "collected_item_count": 0
+    }
+  ],
+  "finished_at": "2026-10-02T01:33:04.124595+00:00",
+  "request_count": 37,
+  "complete": false
+}
