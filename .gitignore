@@ -5,8 +5,8 @@
 __pycache__/
 *.pyc
 .DS_Store
- 
-  # IDE 
-  .idea/ 
-  .vscode/ 
-  EOF
+.idea/
+.vscode/
+data/snapshots/
+results/run*.json
+tmp/
